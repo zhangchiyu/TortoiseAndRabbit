@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:background="@mipmap/login_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".module.login.LoginActivity">
+
+
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/bg"
+            tools:context=".module.register.RegisterActivity">
+
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                app:srcCompat="@mipmap/back" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="42dp"
+                android:layout_marginTop="66dp"
+                android:textColor="@color/White"
+                android:textSize="40sp"
+                android:text="@string/login" />
+
+            <LinearLayout
+                android:id="@+id/ll_username"
+                android:layout_marginTop="200dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_below="@+id/textview"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:background="@drawable/register_bt_bg"
+                android:layout_height="50dp">
+
+                <TextView
+                    android:text="手机号"
+                    android:textColor="@color/White"
+                    android:textSize="14sp"
+                    android:drawablePadding="8dp"
+                    android:drawableLeft="@mipmap/username"
+                    android:layout_marginLeft="20dp"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/et_phonenumber"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_password"
+                android:layout_width="332dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/ll_username"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/register_bt_bg"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:drawableLeft="@mipmap/password"
+                    android:drawablePadding="8dp"
+                    android:text="@string/password"
+                    android:textColor="@color/White"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="24dp"
+                    android:layout_weight="1"
+                    android:inputType="textPassword"
+                     />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/login"
+                android:layout_below="@+id/ll_password"
+                android:layout_marginTop="32dp"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="@drawable/login_bt_weixin"
+                android:textColor="@color/White"
+                android:textSize="18sp"
+                android:text="@string/login" />
+
+
+            <TextView
+                android:id="@+id/tv_weixin_login"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="26dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:text="@string/login_weixin"
+                android:textColor="@color/White"
+                android:textSize="10sp" />
+
+            <ImageView
+                android:id="@+id/login_weixin"
+                android:layout_above="@+id/tv_weixin_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@mipmap/weixin"
+                android:layout_marginBottom="12dp"
+                />
+
+        </RelativeLayout>
+    </android.support.constraint.ConstraintLayout>
+</layout>

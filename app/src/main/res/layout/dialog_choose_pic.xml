@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/bt_takephoto"
+            style="@style/btn_style_choose_pic"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alertdialog_up"
+            android:padding="10dp"
+            android:text="本地上传"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#f7f7f7"/>
+
+        <Button
+            android:id="@+id/bt_gallery"
+            style="@style/btn_style_choose_pic"
+            android:layout_height="wrap_content"
+            android:background="@drawable/update_bg"
+            android:padding="10dp"
+            android:text="本地上传"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:background="#00000000"/>
+
+        <Button
+            android:id="@+id/bt_cancel"
+            style="@style/btn_style_choose_pic"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_alertdialog_grey"
+            android:padding="10dp"
+            android:text="取消"
+
+            />
+    </LinearLayout>
+</RelativeLayout>

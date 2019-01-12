@@ -1,0 +1,219 @@
+http://122.14.213.233:1002/tools/guitu.api.ashx
+1、发送短信验证码方法
+Post值
+action=sendCode&mobile=手机号&verifyId=图片标志id&verifyCode=验证码
+返回值：{code：0,message:“”,data:{ sessionId:” 短信验证码唯一标识” }}
+2、注册
+Post值
+action=register&user_name=昵称&
+mobile=&sessionId= 短信验证码唯一标识 &
+sessionCode= 短信验证码内容&password=MD5加密
+返回值：{code：0,message:“注册成功” }
+{code：1,message:“注册失败” }
+3、登录
+Post值
+action=login & mobile=手机或账户&password=MD5加密
+返回值：{code：0,message:“”, data{sessionToken：用户标志,userbh：账号, userName :用户昵称,recommandUserbh：推荐人账号,recommandCode ：邀请码, token： avatar:头像} }
+{code：1,message:“登录失败”, data{ } }
+注：1. sessionToken，用户唯一标志，每次登陆后会改变，用于同服务器的通信。
+4、通过手机验证码重置登录密码
+Post值
+
+action=findPassword&
+mobile=&
+sessionId= 短信验证码唯一标识 &
+sessionCode= 短信验证码内容&
+password=MD5加密
+
+返回值：{code：0,message:“登录密码已重置” }
+{code：1,message:“登录密码重置失败” }
+
+
+5、修改登录密码
+Post值
+action=resetPassword&
+sessionToken=用户标志&
+orgPassword= 原用户密码MD5加密 &
+password=新密码MD5加密
+
+返回值：{code：0,message:“密码修改成功” }
+{code：1,message:“密码修改失败” }
+6、设置保险箱密码
+Post值
+action=resetPayPassword& sessionToken=用户标志&password=用户密码MD5加密&payPassword=保险箱密码MD5加密
+返回值：{code：0,message:”密码设置成功” }
+{code：1,message:”密码设置失败” }
+
+7、微信登录
+Post值
+action=wxlogin& code=授权临时票据code参数
+返回值：{code：0,message:“”, data{sessionToken：用户标志,userbh：账号, userName :用户昵称, avatar:头像} }
+注：1. sessionToken，用户唯一标志，每次登陆后会改变，用于同服务器的通信。
+3.微信登录的密码已默认123456；
+
+8、获取个人资料
+Post值
+action=getUserInfor& sessionToken=用户标志
+返回值：{code：0,message:“”,data:{id:系统自动增长ID永远不会变化, userbh :用户账号(id大厅展示), userName : 用户昵称, mobile :手机, recommandCode : 邀请码, avatar:头像, amount :金币余额,groupName:会员身份, opened:该应用下微信用户标志,"tuijianren_bh":"推荐人的编号（邀请码）" } }
+
+9、上传图片
+Post值
+action=saveImg& sessionToken=用户标志& Filedata=图片二进制流
+
+返回值：{code：0,message:“”,data:{ url:图片地址,domian= 域名 } }
+注：显示图片用domain+url,上传图片路径用url即可
+10、修改个人资料
+Post值
+action=updateUserInfor& sessionToken=用户标志&username=用户名&avatar=头像
+返回值：{code：0,message:“”}
+11、显示密保问题，有3个问题
+Post值
+action=list_mibao
+返回值：{code：0,message:“”,data:[{wenti_id:问题ID,wenti_biaoti:问题标题},{ wenti_id:问题ID,wenti_biaoti:问题标题}] }
+
+12、提交密保问题
+Post值
+action=tijiao_mibao& sessionToken=用户标志&userid=用户id&wenti_id1=第一个问题ID&daan1=第一个问题答案&wenti_id2=第二个问题ID&daan2=第二个问题答案&wenti_id3=第三个问题ID&daan3=第三个问题答案
+返回值：{code：0,message:“保存成功”}
+{code：1,message:“保存失败”}
+
+13、通过密保重置登录密码
+Post值
+action=mibao_zhaomima&sessionToken= 用户标志&userid=用户ID&daan1=第一个问题答案&daan2=第二个问题答案&daan3=第三个问题答案&password=MD5加密 新的登录密码
+返回值：{code：0,message:“登录密码已重置” }
+{code：1,message:“密保问题不正确” }
+
+12、更新密保问题
+Post值
+action=mibao_gengxin& sessionToken=用户标志&userid=用户id&wenti_id1_lao=第一个问题ID&daan1_lao =第一个问题答案&wenti_id2_lao =第二个问题ID&daan2_lao=第二个问题答案&wenti_id3_lao =第三个问题ID&daan3_lao =第三个问题答案&wenti_id1_xin=第一个问题ID&daan1_ xin =第一个问题答案&wenti_id2_ xin =第二个问题ID&daan2 xin =第二个问题答案&wenti_id3_ xin =第三个问题ID&daan3_ xin =第三个问题答案
+
+返回值：{code：0,message:“保存成功”}
+{code：1,message:“保存失败”}
+
+14、会员间转账
+Post值
+action=zhuanzhang&sessionToken= 用户标志&from_userid=转出用户ID&to_userid=转入的用户ID&jine=转账金额
+返回值：{code：0,message:“转账成功” }
+{code：1,message:“余额不足” }
+{code：2,message:“账号不存在” }
+{code：3,message:“转账失败” }
+15、我的金币明细
+Post值
+action=list_wode_jinbi & sessionToken=用户标志&userid=用户id&stime=开始日期&etime=结束日期&pageIndex=当前页面（从1开始）&pageSize=每页数据量
+返回值：{code：0,message:“”,data:{ amount :金币余额, recordCount:数据总条数, dataDetail :[{ value：金额值,remark：摘要, add_time：时间}]} }
+
+16、我的团队下属流水情况
+Post值
+action=list_tuandui_jinbi & sessionToken=用户标志&userid=用户id&stime=开始日期&etime=结束日期&pageIndex=当前页面（从1开始）&pageSize=每页数据量
+返回值：{code：0,message:“”,data:{ recordCount:数据总条数, dataDetail :[{ userid:用户ID,jia:增加的金额，jian:减少的金额}]} }
+
+17、开奖记录，获取最新的15个开奖记录
+Post值
+action=list_kaijiang
+返回值：{code：0,message:“获取成功”, data :[{ qishu:第几期,shijian:开奖时间，haoma:开奖号码}] }
+{code：1,message:“获取失败”, data :[] }
+
+18、龟兔游戏投注
+Post值
+action=gui_touzhu&sessiontoken=用户标志&userid=用户ID&jine=投注的金额&guitu=投注是龟还是兔（0表示龟，1表示兔）&qishu=第几期
+返回值：{code：0,message:“您投注了第几期” }
+
+{code：1,message:“投注失败” }
+{code：2,message:“余额不足”}
+
+
+19、游戏介绍(用来显示玩法，赔率等信息)
+Post值
+action=youxi_jieshao
+返回值：{code：0,message:“成功获取”,guitu:”龟兔游戏的详细介绍”,caichi:”彩池游戏介绍”,shuzi:” 数字游戏介绍”,longhu:” 龙虎游戏介绍”,tuibing:”推饼游戏介绍” }
+
+{code：1,message:“获取失败” }
+20、我的投注记录(龟兔，彩池，数字，龙虎和)
+Post值
+action=list_wode_touzhu&&sessiontoken=用户标志&userid=用户ID&pagesize=一页显示多少条&pageindex=第几页&stime=开始日期&结束日期
+返回值：{code：0,message:“获取成功”, data :[{shijian: 开奖时间， qishu:第几期, haoma:开奖号码,youxi:游戏名，peilv:赔率，jiangli:未中奖或奖励的钱}] }
+{code：1,message:“获取失败”, data :[] }
+
+
+21、彩池游戏投注
+Post值
+action=caichi_touzhu&sessiontoken=用户标志&userid=用户ID&qishu=第几期
+返回值：{code：0,message:“您投注了第几期” }
+
+{code：1,message:“投注失败” }
+{code：2,message:“余额不足”}
+
+22、数字游戏投注
+Post值
+action=caichi_touzhu&sessiontoken=用户标志&userid=用户ID&qishu=第几期&jine=投注的金额&shuzi=投注的数字
+返回值：{code：0,message:“您投注了第几期” }
+
+{code：1,message:“投注失败” }
+{code：2,message:“余额不足”}
+
+23、ID列表
+Post值
+action=list_id&sessiontoken=10c3a5dd889b4c809200735d0d93faca&userid=5555&pagesize=10&pageindex=1
+action=list_id&sessiontoken=用户标志& userid=用户ID&pagesize=一页显示多少条&pageindex=第几页
+返回值：{code：0,message:“获取成功”, data :[{id: id号码， jiage:价格}] }
+{code：1,message:“获取失败”, data :[] }
+
+
+24、购买ID
+Post值
+action=goumai_id&sessiontoken=用户标志&userid=用户ID&id=要购买的ID号&jiage=id的价格
+返回值：{code：0,message:”购买成功” }
+
+{code：1,message:“购买失败” }
+{code：2,message:“余额不足”}
+{code：3,message:“已被他人抢购！”}
+
+26、金币排行榜
+Post值
+action=list_paihangbang&&sessiontoken=用户标志
+返回值：{code：0,message:“获取成功”, data :[{user_bh: id号码， jinbi:金币}] }
+{code：1,message:“获取失败”, data :[] }
+27、游戏撤单
+Post值
+action=chedan&sessiontoken=用户标志&userid=用户ID&qishu=第几期&youxi=(龟兔、彩池，数字，龙虎和，推饼游戏分别传递1,2,3,4,5)
+返回值：{code：0,message:“撤单成功” }
+
+{code：1,message:“撤单失败” }
+{code：2,message:“已过了撤单有效期”}
+28、获得当前游戏的投注状态
+Post值
+action=touzhu_zhuangtai&sessiontoken=用户标志&userid=用户ID
+返回值：{code：0,message:“获取成功”,shijian:”当前年月日”,qishu:”当前期数”,guitu:0未投注，1已投注，caichi:0未投注，1已投注，shuzi:0未投注，1已投注，longhu:0未投注，1已投注，tuibing:0未投注，1已投注 }
+
+{code：1,message:“获取失败” }
+
+29、龙虎和游戏投注
+Post值
+action=longhu_touzhu&sessiontoken=用户标志&userid=用户ID&qishu=第几期&jine=投注的金额&xuanxiang=(1表示龙，2表示虎，3表示和)
+返回值：{code：0,message:“您投注了第几期” }
+
+{code：1,message:“投注失败” }
+{code：2,message:“余额不足”}
+
+30、路数
+Post值
+action=list_lushu&&sessiontoken=用户标志&userid=用户ID&pagesize=一页显示多少条&pageindex=第几页
+返回值：{code：0,message:“获取成功”, data :[{shijian: “年月日”， qishu:”第几期”,jieguo:”开奖结果”}] }
+{code：1,message:“获取失败”, data :[] }
+
+
+31.今日战绩
+
+Post值
+action=zhanji&sessiontoken=用户标志&userid=用户ID
+返回值：{code：0,message:“您投注了第几期”,ying：赢的钱，shu:输的钱 }
+
+{code：1,message:“获取失败” }
+
+32.我的押注
+
+Post值
+action=yazhu&sessiontoken=用户标志&userid=用户ID
+返回值：{code：0,message:“获取成功”,data:押注的钱 }
+
+{code：1,message:“获取失败” }

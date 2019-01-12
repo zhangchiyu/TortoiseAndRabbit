@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:minHeight="68dp"
+        android:background="@drawable/bg_fuhao"
+        >
+
+        <ImageView
+            android:id="@+id/iv_rank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="8dp"
+            android:src="@mipmap/one"
+         />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="12dp"
+            />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:textColor="#ffcba2"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="80dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="34dp"
+            android:layout_toRightOf="@+id/iv_icon"
+            tools:text="我要发我要发"
+            android:textColor="#ffcba2"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="34dp"
+            android:layout_marginRight="10dp"
+            tools:text="666,518,88万"
+            android:textColor="#ff8125"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="37dp"
+            android:background="@mipmap/yunabao" />
+
+    </RelativeLayout>

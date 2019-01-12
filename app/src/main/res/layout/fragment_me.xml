@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".me.MeFragment">
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@mipmap/bj"
+                >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@mipmap/hu"
+                    android:layout_alignParentBottom="true"
+                    />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/ic_launcher_tortoise"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="0.1dp" />
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/profile_image"
+                    android:layout_marginTop="2dp"
+                    android:text="weid"
+                    android:textColor="#555555"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:drawablePadding="4dp"
+                    android:drawableRight="@mipmap/rename"
+                    />
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/tv_name"
+                    tools:text="ID:699999"
+                    android:text="ID:6999999"
+                    android:textColor="#555555"
+                    android:textSize="14dp"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/White"
+                >
+
+                <RelativeLayout
+                    android:id="@+id/congzhi"
+                    android:layout_width="250dp"
+                    android:layout_height="120dp"
+                    android:layout_centerInParent="true"
+                    android:background="#EEEEEE">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:src="@mipmap/jingbi" />
+
+                    <TextView
+                        android:id="@+id/wodejinbi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="25dp"
+                        android:layout_marginLeft="68dp"
+                        android:text="我的金币" />
+
+
+                    <TextView
+                        android:id="@+id/tv_jinbi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/wodejinbi"
+                        android:layout_marginLeft="8dp"
+                        android:layout_alignBaseline="@+id/wodejinbi"
+                        android:textColor="#FF8E49"
+                        android:textSize="16dp"
+                        android:drawableRight="@mipmap/jiantou"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_alignParentBottom="true"
+        android:elevation="4dp"
+        android:translationZ="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
+</layout>

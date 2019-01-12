@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bggraycolor"
+    tools:context=".me.account.AccountActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center_vertical"
+        android:background="@color/colorAccent"
+        >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="24dp"
+            android:src="@mipmap/back"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="29dp" />
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_centerInParent="true"
+            tools:text="转账"
+            android:textColor="@color/White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textinput"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="60dp"
+        android:elevation="4dp"
+        android:translationZ="4dp"
+        android:background="@color/White"
+        >
+
+        <EditText
+            android:id="@+id/account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:hint="@string/account" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/next"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textinput"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/White"
+        android:background="@drawable/login_bt_weixin"
+        android:layout_centerHorizontal="true"
+        android:text="下一步" />
+
+
+</RelativeLayout>

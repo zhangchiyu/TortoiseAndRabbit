@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0C755B"
+        tools:context=".game.TortoiseRabbitActivity">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/include2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/ivMuisc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.545"
+                app:srcCompat="@mipmap/muisc"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/White"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="title" />
+
+            <ImageView
+                android:id="@+id/introduce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:background="@mipmap/introduce"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivMuisc"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.518"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/marquee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:marqueeRepeatLimit="-1"
+                android:singleLine="true"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/title"
+                app:layout_constraintStart_toEndOf="@+id/ivMuisc"
+                app:layout_constraintTop_toTopOf="parent" />
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="116dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/include2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/kjjl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:text="开奖记录"
+                    android:textColor="#FF9F65"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/record_recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/kjjl"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rec_wite"
+                    android:overScrollMode="never" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/des"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="剩余开奖时间"
+                    android:textColor="#28D6AF"
+                    android:textSize="10sp" />
+
+                <com.example.doldrum.tortoiseandrabbit.widget.CountDownTime
+                    android:id="@+id/time"
+                    android:layout_width="65dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/des"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="6dp"
+                    android:background="@mipmap/countdowntime"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    tools:text="即将开奖" />
+
+                <TextView
+                    android:id="@+id/tv_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/time"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_horizontal"
+                    android:text="开奖号码"
+                    android:textColor="#28D6AF"
+                    android:textSize="10sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/main_fl_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1">
+
+
+                        <include
+                            android:layout_gravity="center"
+                            tools:ignore="IncludeLayoutParam"
+                            layout="@layout/cell_card_front" />
+
+                        <include
+                            android:layout_gravity="center"
+                            layout="@layout/cell_card_back"
+                            tools:ignore="IncludeLayoutParam" />
+
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/ymain_fl_container"
+                        android:layout_width="match_parent"
+                        android:padding="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1">
+
+                        <include
+                            android:layout_gravity="center"
+                            tools:ignore="IncludeLayoutParam"
+                            layout="@layout/cell_card_front1" />
+
+                        <include
+                            android:layout_gravity="center"
+                            tools:ignore="IncludeLayoutParam"
+                            layout="@layout/cell_card_back1" />
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:id="@+id/rmain_fl_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1">
+
+                        <include
+                            android:layout_gravity="center"
+                            tools:ignore="IncludeLayoutParam"
+                            layout="@layout/cell_card_front2" />
+
+                        <include
+                            android:layout_gravity="center"
+                            tools:ignore="IncludeLayoutParam"
+                            layout="@layout/cell_card_back2" />
+
+                    </FrameLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_num1"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/wquestionmark"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_num2"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/yquestionmark"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_num3"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/rquestionmark"
+                        android:visibility="gone" />
+
+
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/rl_caichi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="1"
+                android:background="@mipmap/caici">
+
+                <TextView
+                    android:id="@+id/caichi_jine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="#FFDA64"
+                    tools:text="888888" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_below="@+id/caichi_jine"
+                    android:layout_centerHorizontal="true"
+                    android:background="@mipmap/btsure"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="1dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="1dp"
+                    android:text="5w"
+                    android:textColor="@color/White"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/White"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view">
+
+
+            <FrameLayout
+                android:id="@+id/fl_wugui"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/un_selector"
+                android:focusable="true"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                >
+
+                <RelativeLayout
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/wugui"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@mipmap/wugui" />
+
+                    <TextView
+                        android:id="@+id/peilv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/wugui"
+                        android:layout_centerHorizontal="true"
+                        android:text="0-13"
+                        android:textColor="@color/White" />
+
+                    <TextView
+                        android:id="@+id/gui_peilv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/peilv"
+                        android:layout_centerHorizontal="true"
+                        android:text="1陪1.95" />
+
+                </RelativeLayout>
+
+                <com.example.doldrum.tortoiseandrabbit.widget.ContainerViewGroup
+                    android:id="@+id/cvg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+
+                </com.example.doldrum.tortoiseandrabbit.widget.ContainerViewGroup>
+
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/fl_tuizi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/un_selector"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <RelativeLayout
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/tuizi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:src="@mipmap/tuizi" />
+
+                    <TextView
+                        android:id="@+id/tpeilv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tuizi"
+                        android:layout_centerHorizontal="true"
+                        android:text="0-13"
+                        android:textColor="@color/White" />
+
+                    <TextView
+                        android:id="@+id/tu_peilv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tpeilv"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:text="1陪1.95" />
+
+                </RelativeLayout>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/White"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/linearLayout3" />
+
+
+        <LinearLayout
+            android:id="@+id/llRe"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <FrameLayout
+                    android:id="@+id/framelayout0"
+                    android:onClick="onClick"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    >
+                    <LinearLayout
+                        android:id="@+id/ll0"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="@color/White"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv0"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/framelayout1"
+                    android:onClick="onClick"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    >
+                    <LinearLayout
+                        android:id="@+id/ll1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:text="1"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/framelayout2"
+                    android:onClick="onClick"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    >
+                    <LinearLayout
+                        android:id="@+id/ll2"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:text="2"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/framelayout3"
+                    android:onClick="onClick"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    >
+                    <LinearLayout
+                        android:id="@+id/ll3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:text="3"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+                <FrameLayout
+                    android:id="@+id/framelayout4"
+                    android:onClick="onClick"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    >
+                    <LinearLayout
+                        android:id="@+id/ll4"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:text="4"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <FrameLayout
+                    android:id="@+id/framelayout5"
+                    android:onClick="onClick"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:padding="0dp"
+                    >
+                    <LinearLayout
+                        android:id="@+id/ll5"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="5"
+                            android:textColor="@color/White"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:onClick="onClick"
+                    android:id="@+id/framelayout6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll6"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="6"
+                            android:textColor="@color/White"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:onClick="onClick"
+                    android:id="@+id/framelayout7"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll7"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="7"
+                            android:textColor="@color/White"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:onClick="onClick"
+                    android:id="@+id/framelayout8"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll8"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="8"
+                            android:textColor="@color/White"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:onClick="onClick"
+                    android:id="@+id/framelayout9"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="0dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll9"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_selector"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="9"
+                            android:textColor="@color/White"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="单数"
+                            android:textColor="@color/White"
+                            android:textSize="10dp" />
+
+                        <TextView
+                            android:id="@+id/tv_peilv9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:textColor="@color/White"
+                            android:textSize="9dp" />
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llRe">
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:orientation="horizontal">
+
+
+                <FrameLayout
+                    android:id="@+id/fl_long"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/un_selector_longandhu">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@mipmap/longg" />
+
+                        <TextView
+                            android:id="@+id/tv_long"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="13dp"
+                            android:textColor="#DE8246" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_he"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/un_selector_longandhu">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@mipmap/he" />
+
+                        <TextView
+                            android:id="@+id/tv_he"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="13dp"
+                            android:textColor="#DE8246" />
+                    </RelativeLayout>
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/fl_hu"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/un_selector_longandhu">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@mipmap/laohu" />
+
+                        <TextView
+                            android:id="@+id/tv_hu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="13dp"
+                            android:textColor="#DE8246" />
+                    </RelativeLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+
+                <TextView
+                    android:id="@+id/tv_zhanji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/bt_cancle"
+                    android:layout_alignLeft="@+id/bt_cancle"
+                    android:layout_alignParentBottom="true"
+                    android:text="战绩： "
+                    android:textColor="@color/White"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_jibbi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/bt_lushu"
+                    android:layout_alignLeft="@+id/bt_lushu"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:text="金币： "
+                    android:textColor="@color/White"
+                    android:textSize="12sp" />
+
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_sure"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@mipmap/btsure"
+                    android:text="确认投注"
+                    android:textColor="@color/White"
+                    android:textSize="12dp" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_cancle"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="33dp"
+                    android:layout_toLeftOf="@+id/bt_sure"
+                    android:background="@mipmap/imagecancle"
+                    android:text="一键撤单"
+                    android:textColor="@color/White"
+                    android:textSize="12dp" />
+
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_touzu"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="107dp"
+                    android:layout_marginLeft="107dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@mipmap/touzu"
+                    android:text="我的投注"
+                    android:textColor="@color/White"
+                    android:textSize="12dp" />
+
+                <android.support.v7.widget.AppCompatButton
+                    android:id="@+id/bt_lushu"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@mipmap/lushu"
+                    android:text="路数"
+                    android:textColor="@color/White"
+                    android:textSize="12dp" />
+            </RelativeLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <ImageView
+                android:id="@+id/iv_qian"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:src="@mipmap/qian" />
+
+            <ImageView
+                android:id="@+id/iv_wan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:src="@mipmap/wan" />
+
+            <ImageView
+                android:id="@+id/iv_tenwan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:src="@mipmap/tenwan" />
+
+            <ImageView
+                android:id="@+id/iv_ttwan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:src="@mipmap/ttwan" />
+
+            <ImageView
+                android:id="@+id/iv_fwan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:src="@mipmap/fwan" />
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

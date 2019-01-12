@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/title_base"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:padding="10dp"
+            android:src="@mipmap/back" />
+
+        <TextView
+
+            android:id="@+id/tvTitle_base"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="xxx"
+            android:textColor="@color/White"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:layout_alignParentRight="true" />
+
+        <ImageView
+            android:id="@+id/img_right_btn"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/call"
+            android:visibility="gone"
+            android:layout_alignParentRight="true" />
+
+    </RelativeLayout>
+    <com.example.doldrum.tortoiseandrabbit.widget.ProgressWebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <Button
+        android:id="@+id/bt_leave_message"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+        android:text="咨询留言"
+        android:textColor="@color/White"
+        android:visibility="gone" />
+
+</LinearLayout>

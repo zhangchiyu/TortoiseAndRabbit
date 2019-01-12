@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#02CFA1</color>
+    <color name="colorPrimaryDark">#01A2F5</color>
+    <color name="colorAccent">#02CFA1</color>
+
+
+    <color name="Orange">#ff5722</color>
+    <color name="DeepPurple">#673AB7</color>
+    <color name="DeepPurple900">#311B92</color>
+    <color name="White">#ffffff</color>
+    <color name="Gray">#888888</color>
+    <color name="Gray100">#dddddd</color>
+    <color name="Gray600">#999999</color>
+    <color name="bggraycolor">#EFEFEF</color>
+    <color name="hintcolor">#DEDDDD</color>
+
+    <color name="short_blue">#48B7FF</color>
+    <color name="orange">#FFD65D</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="transparent">#00000000</color>
+
+
+    <color name="cardFront">#434850</color>
+    <color name="cardBack">#bc4c4a</color>
+    <color name="divide_gray_color">#2effffff</color>
+
+
+</resources>

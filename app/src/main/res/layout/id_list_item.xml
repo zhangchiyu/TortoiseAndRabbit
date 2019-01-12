@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.doldrum.tortoiseandrabbit.bean.IdDataBean"></variable>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/rec_item_bg"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:text="@{String.valueOf(item.user_bh)}"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:text="@{item.jine}"
+            android:textColor="@android:color/white"
+            android:gravity="center"/>
+
+        <RelativeLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:onClick="@{item.toActivity}"
+                android:background="@drawable/goumai_bg"
+                android:textColor="@color/White"
+                android:text="购买"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+        <View
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/item_view_bg"
+            android:layerType="software"
+            />
+    </LinearLayout>
+</layout>

@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">TortoiseAndRabbit</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home"> 首页</string>
+    <string name="title_dashboard">游戏</string>
+    <string name="title_notifications">个人中心</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="account">对方账户</string>
+    <string name="account_number">账号登录</string>
+    <string name="login_weixin">微信登录</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="register">注册</string>
+    <string name="login">登录</string>
+    <string name="input_phone_number">请输入手机号:</string>
+    <string name="verification_code">请输入验证码:</string>
+    <string name="send_code">发送验证码</string>
+    <string name="sure">确定</string>
+    <string name="username">用户名</string>
+    <string name="code">验证码</string>
+    <string name="password">密\t\t码</string>
+    <string name="gamelist">游戏列表</string>
+    <string name="phonenumber">请输入手机号码</string>
+    <string name="network">请连接网络</string>
+
+
+    <string name="rank">NO.</string>
+    <string name="id">ID:</string>
+    <string name="wan">万</string>
+
+
+    <string name="touzhutime">时间</string>
+    <string name="touzhuplay">玩法</string>
+    <string name="touzhuqishu">期号</string>
+    <string name="touzhuhao">号码</string>
+    <string name="touzhucontent">内容</string>
+    <string name="touzhujine">金额</string>
+    <string name="touxiang">头像</string>
+
+
+    <string-array name="classname">
+        <item>com.example.doldrum.tortoiseandrabbit.me.account.AccountActivity</item>
+        <item>com.example.doldrum.tortoiseandrabbit.me.SetingActivity</item>
+        <item>com.example.doldrum.tortoiseandrabbit.me.personandteam.PersonListActivity</item>
+        <item>com.example.doldrum.tortoiseandrabbit.me.personandteam.TeamReportActivity</item>
+        <item>com.example.doldrum.tortoiseandrabbit.me.SafeActivity</item>
+        <item>com.example.doldrum.tortoiseandrabbit.me.personandteam.AnnouncementActivity</item>
+        <item>com.example.doldrum.tortoiseandrabbit.me.WebViewActivity</item>
+    </string-array>
+
+    <string-array name="content">
+        <item>转账</item>
+        <item>账号设置</item>
+        <item>个人报表</item>
+        <item>团队报表</item>
+        <item>保险箱</item>
+        <item>公告栏</item>
+        <item>关于</item>
+    </string-array>
+
+    <string name="title_activity_splash">龟兔娱乐</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="card_front">正面</string>
+    <string name="card_back">反面</string>
+</resources>
